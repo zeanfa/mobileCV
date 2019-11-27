@@ -16,20 +16,20 @@ while(cap.isOpened()):
     # Convert to grayscale
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     
-    # Denoise 
-    gray = cv2.GaussianBlur(gray,(3,3),0)
+    # Initiate STAR detector
+    orb = cv2.ORB_create(nfeatures=1000)
 
-    # Sobel filter
-    h = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=1)
-    v = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=1)
-    #sobel = cv2.addWeighted(h, 0.5, v, 0.5, 0)
-    der_arr = np.array([h,v])
-    sobel = np.linalg.norm(der_arr, axis=0)
-    thd_abs = cv2.convertScaleAbs(sobel, alpha=1)
+    # find the keypoints with ORB
+    kp = orb.detect(gray,None)
+
+    # compute the descriptors with ORB
+    kp, des = orb.compute(gray, kp)
+
+    # draw only keypoints location,not size and orientation
+    frame_kp = cv2.drawKeypoints(gray,kp,outImage = None, color=(0,255,0), flags=0)
 
     # Show video
-    cv2.imshow('Detect Boundaries',thd_abs)
-    cv2.imshow('Cam',frame)
+    cv2.imshow('ORB',frame_kp)
 
     # Exit if "4" is pressed
     k = cv2.waitKey(1) & 0xFF

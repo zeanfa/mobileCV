@@ -1,5 +1,6 @@
 import numpy as np
 import cv2
+from sklearn.cluster import KMeans
 
 print('Press 4 to Quit the Application\n')
 
@@ -15,21 +16,17 @@ while(cap.isOpened()):
 
     # Convert to grayscale
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    
+
     # Denoise 
     gray = cv2.GaussianBlur(gray,(3,3),0)
 
-    # Sobel filter
-    h = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=1)
-    v = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=1)
-    #sobel = cv2.addWeighted(h, 0.5, v, 0.5, 0)
-    der_arr = np.array([h,v])
-    sobel = np.linalg.norm(der_arr, axis=0)
-    thd_abs = cv2.convertScaleAbs(sobel, alpha=1)
+    # Adaptive thresholding
+    blockSize = 7
+    th2 = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, blockSize, 2)
 
     # Show video
-    cv2.imshow('Detect Boundaries',thd_abs)
-    cv2.imshow('Cam',frame)
+    cv2.imshow('Cam', frame)
+    cv2.imshow('Adaptive threshold', th2)
 
     # Exit if "4" is pressed
     k = cv2.waitKey(1) & 0xFF
