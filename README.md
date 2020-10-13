@@ -7,6 +7,10 @@ https://www.jetsonhacks.com/2019/06/07/jetson-nano-gpio/
 
 https://pypi.org/project/Jetson.GPIO/
 
+### Jetson time sync issues
+
+https://github.com/justsoft/jetson-nano-date-sync
+
 ### Report spec  
 1. Титульный лист  
 1. Цель работы  
