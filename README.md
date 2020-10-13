@@ -9,7 +9,8 @@ https://pypi.org/project/Jetson.GPIO/
 
 ### Jetson time sync issues
 
-https://github.com/justsoft/jetson-nano-date-sync
+https://github.com/justsoft/jetson-nano-date-sync  
+Remove check if year == 2018 in /etc/network/if-up.d/date-sync
 
 ### Report spec  
 1. Титульный лист  
