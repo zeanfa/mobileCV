@@ -1,16 +1,16 @@
 # mobileCV
 This repository contains materials for a course on mobile systems for computer vision at ITMO University, St.Petersburg, Russia
 
-### Jetson GPIO
-
-https://www.jetsonhacks.com/2019/06/07/jetson-nano-gpio/
-
+### Jetson GPIO  
+https://www.jetsonhacks.com/2019/06/07/jetson-nano-gpio/  
 https://pypi.org/project/Jetson.GPIO/
 
-### Jetson time sync issues
-
+### Jetson time sync issues  
 https://github.com/justsoft/jetson-nano-date-sync  
 Remove check if year == 2018 in /etc/network/if-up.d/date-sync
+
+### Jetson swap setup  
+https://jkjung-avt.github.io/setting-up-nano/
 
 ### Report spec  
 1. Титульный лист  
