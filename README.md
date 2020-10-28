@@ -14,7 +14,8 @@ https://github.com/justsoft/jetson-nano-date-sync
 Remove check if year == 2018 in /etc/network/if-up.d/date-sync
 
 ### Jetson swap setup  
-https://jkjung-avt.github.io/setting-up-nano/
+https://jkjung-avt.github.io/setting-up-nano/  
+Swap can also be set with **jtop**
 
 ### PyTorch and Torchvision setup  
 https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-6-0-now-available/72048
