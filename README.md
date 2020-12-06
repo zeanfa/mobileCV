@@ -7,7 +7,10 @@ https://pypi.org/project/Jetson.GPIO/
 https://forums.developer.nvidia.com/t/jetson-nano-gpio-example-problem/75547/20
 
 ### Jetson Camera  
-https://github.com/JetsonHacksNano/CSI-Camera
+https://github.com/JetsonHacksNano/CSI-Camera  
+
+### Video streaming over local net using PyZMQ
+https://github.com/jeffbass/imagezmq
 
 ### Jetson time sync issues  
 https://github.com/justsoft/jetson-nano-date-sync  
